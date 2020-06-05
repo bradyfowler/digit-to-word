@@ -1,0 +1,42 @@
+# digit to word
+# brady fowler
+# 05/06/2020
+
+digits = 0
+tt = 0
+
+list = [(str(1), 'one'), (str(2), 'two'), (str(3), 'three'), (str(4), 'four'), (str(5), 'five'), (str(6), 'six'), (str(7), 'seven'), (str(8), 'eight'), (str(9), 'nine')]
+
+while True:
+    number = input("Input a number between 0 and 10,000 to convert to words. ")
+    try:
+        mint = int(number)
+        if int(number)>10001 or int(number)<-1:
+            print("invalid input")
+        else:
+            break
+    except ValueError:
+        print("invalid input")
+    
+for i in number:
+    digits = digits + 1
+
+if digits > 3:
+    suffix = "thousand"
+    if digits == 5:
+        tt = 1
+    
+elif digits == 3:
+    suffix = "hundred"
+    
+elif digits == 2:
+    suffix = "ty"
+    
+else:
+    suffix = ""
+
+for k, v in list:
+    for i in number:
+        number2 = str(number).replace(k, v)
+
+print(number2)
